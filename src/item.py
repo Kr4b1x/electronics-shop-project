@@ -1,6 +1,5 @@
 import csv
 
-
 class Item:
     """
     Класс для представления товара в магазине.
@@ -52,7 +51,7 @@ class Item:
     def instantiate_from_csv(cls, csv_file):
         """Добавление экземпляра класса из csv файла"""
         cls.all = []
-        with open(csv_file) as file:
+        with open(csv_file, newline="", encoding="windows-1251") as file:
             data = csv.DictReader(file)
             for item in data:
                 cls(str(item["name"]), float(item["price"]), int(item["quantity"]))
