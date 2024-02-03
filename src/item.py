@@ -22,9 +22,17 @@ class Item:
         self.all.append(self)
 
     def __repr__(self):
+        """
+        Вывод информации об отладки для разработчиков
+        return: Название класса(Имя, цена, количество)
+        """
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
     def __str__(self):
+        """
+        Вывод информации для конечного пользователя
+        return: Название товара
+        """
         return f"{self.name}"
 
     def calculate_total_price(self) -> float:
