@@ -21,6 +21,14 @@ class Item:
         self.quantity = quantity
         self.all.append(self)
 
+    def __add__(self, other):
+        """
+        Сложение классов с проверкой (self.quantity)
+        """
+        if not isinstance(other, Item):
+            raise ValueError("Можно сложить только `Phone` или `Item` с экземплярами не `Phone` или `Item` классов.")
+        return self.quantity + other.quantity
+
     def __repr__(self):
         """
         Вывод информации об отладки для разработчиков
